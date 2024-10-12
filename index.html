@@ -10,11 +10,11 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f0f4f8;
             color: #333;
         }
         header {
-            background-color: #1a1a1a;
+            background-color: #282c34;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -25,7 +25,7 @@
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -45,7 +45,7 @@
             transition: background-color 0.3s;
         }
         nav ul li a:hover {
-            background-color: #28a745;
+            background-color: #61dafb; /* Light blue */
         }
         .language-selector {
             margin: 10px;
@@ -60,9 +60,11 @@
             padding: 40px 20px;
             text-align: center;
             background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
-            background-color: #1a1a1a;
+            background-color: #282c34;
             color: white;
             padding: 20px;
             text-align: center;
@@ -70,14 +72,26 @@
         footer p {
             margin: 0;
         }
-        section#contact {
-            background-color: #f8f9fa;
+        section#discord {
+            background-color: #e9ecef; /* Light gray */
             padding: 40px 20px;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .contact-info {
+        .discord-info {
             font-size: 1.1rem;
             color: #555;
+        }
+        .discord-link {
+            color: #61dafb; /* Light blue */
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #61dafb;
+            transition: border-bottom 0.3s;
+        }
+        .discord-link:hover {
+            border-bottom: 2px solid transparent; /* Remove underline on hover */
         }
     </style>
 </head>
@@ -94,17 +108,17 @@
         <nav>
             <ul>
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#contact">Связаться с нами</a></li>
+                <li><a href="#discord">Discord сервер</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="contact">
-        <h2>Связаться с нами</h2>
-        <div class="contact-info">
-            <p>Email: info@standoff2gold.com</p>
-            <p>Телефон: +123 456 7890</p>
-            <p>Адрес: Москва, Россия</p>
+    <section id="discord">
+        <h2>Присоединяйтесь к нашему Discord серверу</h2>
+        <div class="discord-info">
+            <p>Будьте в курсе всех новостей и обновлений Standoff 2!</p>
+            <p>Присоединяйтесь к нам по ссылке ниже:</p>
+            <a href="https://discord.gg/yourdiscordlink" class="discord-link" target="_blank">Наш Discord сервер</a>
         </div>
     </section>
 
@@ -116,23 +130,21 @@
         const translations = {
             ru: {
                 header: "Купить золото Standoff 2",
-                nav: ["Главная", "Связаться с нами"],
-                contact: {
-                    title: "Связаться с нами",
-                    email: "Email: info@standoff2gold.com",
-                    phone: "Телефон: +123 456 7890",
-                    address: "Адрес: Москва, Россия"
+                nav: ["Главная", "Discord сервер"],
+                discord: {
+                    title: "Присоединяйтесь к нашему Discord серверу",
+                    info: "Будьте в курсе всех новостей и обновлений Standoff 2!",
+                    linkText: "Наш Discord сервер"
                 },
                 footer: "© 2024 Золото Standoff 2. Все права защищены."
             },
             az: {
                 header: "Standoff 2 Qızıl Satın Al",
-                nav: ["Ana səhifə", "Bizimlə Əlaqə"],
-                contact: {
-                    title: "Bizimlə Əlaqə",
-                    email: "Email: info@standoff2gold.com",
-                    phone: "Telefon: +123 456 7890",
-                    address: "Ünvan: Moskva, Rusiya"
+                nav: ["Ana səhifə", "Discord server"],
+                discord: {
+                    title: "Bizim Discord serverimizə qoşulun",
+                    info: "Standoff 2 ilə bağlı bütün yeniliklərdən xəbərdar olun!",
+                    linkText: "Bizim Discord serverimiz"
                 },
                 footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
             }
@@ -144,11 +156,10 @@
             navItems[0].innerText = translations[lang].nav[0];
             navItems[1].innerText = translations[lang].nav[1];
 
-            document.querySelector('#contact h2').innerText = translations[lang].contact.title;
-            const contactInfo = document.querySelectorAll('.contact-info p');
-            contactInfo[0].innerText = translations[lang].contact.email;
-            contactInfo[1].innerText = translations[lang].contact.phone;
-            contactInfo[2].innerText = translations[lang].contact.address;
+            document.querySelector('#discord h2').innerText = translations[lang].discord.title;
+            const discordInfo = document.querySelectorAll('.discord-info p');
+            discordInfo[0].innerText = translations[lang].discord.info;
+            document.querySelector('.discord-link').innerText = translations[lang].discord.linkText;
 
             document.querySelector('footer p').innerText = translations[lang].footer;
         }
