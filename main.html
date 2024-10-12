@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy Standoff 2 Gold - Fast and Secure">
+    <title>Standoff 2 Gold - Fast & Secure Gold for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+        .product-card h2 {
+            color: #333;
+        }
+        .product-card p {
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .language-selector {
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        const translations = {
+            en: {
+                header: "Buy Standoff 2 Gold",
+                nav: ["Home", "Gold Packages", "Contact Us"],
+                products: [
+                    {
+                        title: "Gold Package 1 - 1000 Gold",
+                        description: "Get 1000 Gold for your Standoff 2 account instantly after purchase.",
+                        button: "Buy Now"
+                    },
+                    {
+                        title: "Gold Package 2 - 5000 Gold",
+                        description: "Receive 5000 Gold quickly and securely, directly to your Standoff 2 account.",
+                        button: "Buy Now"
+                    },
+                    {
+                        title: "Gold Package 3 - 10000 Gold",
+                        description: "Best value! 10000 Gold delivered fast after purchase. Secure and reliable.",
+                        button: "Buy Now"
+                    }
+                ],
+                contact: {
+                    title: "Contact Us",
+                    name: "Name",
+                    email: "Email",
+                    message: "Your Inquiry",
+                    placeholder: "Questions or purchase inquiry...",
+                    submit: "Send"
+                },
+                footer: "© 2024 Standoff 2 Gold. All rights reserved."
+            },
+            ru: {
+                header: "Купить золото Standoff 2",
+                nav: ["Главная", "Пакеты золота", "Связаться с нами"],
+                products: [
+                    {
+                        title: "Пакет золота 1 - 1000 золота",
+                        description: "Получите 1000 золота для вашей учетной записи Standoff 2 мгновенно после покупки.",
+                        button: "Купить сейчас"
+                    },
+                    {
+                        title: "Пакет золота 2 - 5000 золота",
+                        description: "Получите 5000 золота быстро и безопасно, прямо на ваш аккаунт Standoff 2.",
+                        button: "Купить сейчас"
+                    },
+                    {
+                        title: "Пакет золота 3 - 10000 золота",
+                        description: "Лучшее предложение! 10000 золота доставляются быстро после покупки. Безопасно и надежно.",
+                        button: "Купить сейчас"
+                    }
+                ],
+                contact: {
+                    title: "Связаться с нами",
+                    name: "Имя",
+                    email: "Электронная почта",
+                    message: "Ваш запрос",
+                    placeholder: "Вопросы или запрос на покупку...",
+                    submit: "Отправить"
+                },
+                footer: "© 2024 Золото Standoff 2. Все права защищены."
+            },
+            az: {
+                header: "Standoff 2 Qızıl Satın Al",
+                nav: ["Ana səhifə", "Qızıl Paketləri", "Bizimlə Əlaqə"],
+                products: [
+                    {
+                        title: "Qızıl Paketi 1 - 1000 Qızıl",
+                        description: "Alışdan dərhal sonra Standoff 2 hesabınız üçün 1000 Qızıl əldə edin.",
+                        button: "İndi Al"
+                    },
+                    {
+                        title: "Qızıl Paketi 2 - 5000 Qızıl",
+                        description: "5000 Qızılı sürətlə və təhlükəsiz şəkildə, birbaşa Standoff 2 hesabınıza alın.",
+                        button: "İndi Al"
+                    },
+                    {
+                        title: "Qızıl Paketi 3 - 10000 Qızıl",
+                        description: "Ən yaxşı dəyər! 10000 Qızıl, alışdan sonra tez bir zamanda təqdim olunur. Təhlükəsiz və etibarlıdır.",
+                        button: "İndi Al"
+                    }
+                ],
+                contact: {
+                    title: "Bizimlə Əlaqə",
+                    name: "Ad",
+                    email: "E-poçt",
+                    message: "Sorğunuz",
+                    placeholder: "Suallar və ya satınalma sorğusu...",
+                    submit: "Göndər"
+                },
+                footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelector('header h1').innerText = translations[lang].header;
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach((link, index) => {
+                link.innerText = translations[lang].nav[index];
+            });
+
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                card.querySelector('h2').innerText = translations[lang].products[index].title;
+                card.querySelector('p').innerText = translations[lang].products[index].description;
+                card.querySelector('.btn').innerText = translations[lang].products[index].button;
+            });
+
+            const contactTitle = document.querySelector('form h2');
+            contactTitle.innerText = translations[lang].contact.title;
+
+            document.querySelector('label[for="name"]').innerText = translations[lang].contact.name;
+            document.querySelector('label[for="email"]').innerText = translations[lang].contact.email;
+            document.querySelector('label[for="message"]').innerText = translations[lang].contact.message;
+            document.querySelector('#message').placeholder = translations[lang].contact.placeholder;
+            document.querySelector('input[type="submit"]').value = translations[lang].contact.submit;
+
+            document.querySelector('footer p').innerText = translations[lang].footer;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Buy Standoff 2 Gold</h1>
+        <div class="language-selector">
+            <label for="language">Select Language:</label>
+            <select id="language" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+                <option value="az">Azərbaycanca</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Gold Packages</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="product-card" id="products">
+            <h2>Gold Package 1 - 1000 Gold</h2>
+            <p>Get 1000 Gold for your
