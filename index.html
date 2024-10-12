@@ -4,187 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Buy Standoff 2 Gold - Fast and Secure">
-    <title>Standoff 2 Gold - Fast & Secure Gold for Sale</title>
+    <title>Standoff 2 Gold - Contact Us</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #1a1a1a;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         nav ul {
             list-style: none;
             padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        .product-card {
-            background-color: white;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 400px;
-        }
-        .product-card h2 {
-            color: #333;
-        }
-        .product-card p {
-            color: #555;
-        }
-        .btn {
-            display: inline-block;
             padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
             background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
         }
-        footer {
+        .language-selector {
+            margin: 10px;
             text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
         }
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 400px;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+        .language-selector select {
+            padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        form input[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
+        main {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #ffffff;
         }
-        .language-selector {
-            margin: 10px 0;
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        section#contact {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .contact-info {
+            font-size: 1.1rem;
+            color: #555;
         }
     </style>
-    <script>
-        const translations = {
-            ru: {
-                header: "Купить золото Standoff 2",
-                nav: ["Главная", "Пакеты золота", "Связаться с нами"],
-                products: [
-                    {
-                        title: "Пакет золота 1 - 1000 золота",
-                        description: "Получите 1000 золота для вашей учетной записи Standoff 2 мгновенно после покупки.",
-                        button: "Купить сейчас"
-                    },
-                    {
-                        title: "Пакет золота 2 - 5000 золота",
-                        description: "Получите 5000 золота быстро и безопасно, прямо на ваш аккаунт Standoff 2.",
-                        button: "Купить сейчас"
-                    },
-                    {
-                        title: "Пакет золота 3 - 10000 золота",
-                        description: "Лучшее предложение! 10000 золота доставляются быстро после покупки. Безопасно и надежно.",
-                        button: "Купить сейчас"
-                    }
-                ],
-                contact: {
-                    title: "Связаться с нами",
-                    name: "Имя",
-                    email: "Электронная почта",
-                    message: "Ваш запрос",
-                    placeholder: "Вопросы или запрос на покупку...",
-                    submit: "Отправить"
-                },
-                footer: "© 2024 Золото Standoff 2. Все права защищены."
-            },
-            az: {
-                header: "Standoff 2 Qızıl Satın Al",
-                nav: ["Ana səhifə", "Qızıl Paketləri", "Bizimlə Əlaqə"],
-                products: [
-                    {
-                        title: "Qızıl Paketi 1 - 1000 Qızıl",
-                        description: "Alışdan dərhal sonra Standoff 2 hesabınız üçün 1000 Qızıl əldə edin.",
-                        button: "İndi Al"
-                    },
-                    {
-                        title: "Qızıl Paketi 2 - 5000 Qızıl",
-                        description: "5000 Qızılı sürətlə və təhlükəsiz şəkildə, birbaşa Standoff 2 hesabınıza alın.",
-                        button: "İndi Al"
-                    },
-                    {
-                        title: "Qızıl Paketi 3 - 10000 Qızıl",
-                        description: "Ən yaxşı dəyər! 10000 Qızıl, alışdan sonra tez bir zamanda təqdim olunur. Təhlükəsiz və etibarlıdır.",
-                        button: "İndi Al"
-                    }
-                ],
-                contact: {
-                    title: "Bizimlə Əlaqə",
-                    name: "Ad",
-                    email: "E-poçt",
-                    message: "Sorğunuz",
-                    placeholder: "Suallar və ya satınalma sorğusu...",
-                    submit: "Göndər"
-                },
-                footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.querySelector('header h1').innerText = translations[lang].header;
-            const navLinks = document.querySelectorAll('nav ul li a');
-            navLinks.forEach((link, index) => {
-                link.innerText = translations[lang].nav[index];
-            });
-
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach((card, index) => {
-                card.querySelector('h2').innerText = translations[lang].products[index].title;
-                card.querySelector('p').innerText = translations[lang].products[index].description;
-                card.querySelector('.btn').innerText = translations[lang].products[index].button;
-            });
-
-            const contactTitle = document.querySelector('form h2');
-            contactTitle.innerText = translations[lang].contact.title;
-
-            document.querySelector('label[for="name"]').innerText = translations[lang].contact.name;
-            document.querySelector('label[for="email"]').innerText = translations[lang].contact.email;
-            document.querySelector('label[for="message"]').innerText = translations[lang].contact.message;
-            document.querySelector('#message').placeholder = translations[lang].contact.placeholder;
-            document.querySelector('input[type="submit"]').value = translations[lang].contact.submit;
-
-            document.querySelector('footer p').innerText = translations[lang].footer;
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -199,50 +94,64 @@
         <nav>
             <ul>
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#products">Пакеты золота</a></li>
                 <li><a href="#contact">Связаться с нами</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="home">
-        <section class="product-card" id="products">
-            <h2>Пакет золота 1 - 1000 золота</h2>
-            <p>Получите 1000 золота для вашей учетной записи Standoff 2 мгновенно после покупки.</p>
-            <a href="#contact" class="btn">Купить сейчас</a>
-        </section>
-
-        <section class="product-card">
-            <h2>Пакет золота 2 - 5000 золота</h2>
-            <p>Получите 5000 золота быстро и безопасно, прямо на ваш аккаунт Standoff 2.</p>
-            <a href="#contact" class="btn">Купить сейчас</a>
-        </section>
-        
-        <section class="product-card">
-            <h2>Пакет золота 3 - 10000 золота</h2>
-            <p>Лучшее предложение! 10000 золота доставляются быстро после покупки. Безопасно и надежно.</p>
-            <a href="#contact" class="btn">Купить сейчас</a>
-        </section>
-    </main>
-
     <section id="contact">
-        <form>
-            <h2>Связаться с нами</h2>
-            <label for="name">Имя</label>
-            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-
-            <label for="email">Электронная почта</label>
-            <input type="email" id="email" name="email" placeholder="Ваш email" required>
-
-            <label for="message">Ваш запрос</label>
-            <textarea id="message" name="message" rows="4" placeholder="Вопросы или запрос на покупку..." required></textarea>
-
-            <input type="submit" value="Отправить">
-        </form>
+        <h2>Связаться с нами</h2>
+        <div class="contact-info">
+            <p>Email: info@standoff2gold.com</p>
+            <p>Телефон: +123 456 7890</p>
+            <p>Адрес: Москва, Россия</p>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Золото Standoff 2. Все права защищены.</p>
     </footer>
+
+    <script>
+        const translations = {
+            ru: {
+                header: "Купить золото Standoff 2",
+                nav: ["Главная", "Связаться с нами"],
+                contact: {
+                    title: "Связаться с нами",
+                    email: "Email: info@standoff2gold.com",
+                    phone: "Телефон: +123 456 7890",
+                    address: "Адрес: Москва, Россия"
+                },
+                footer: "© 2024 Золото Standoff 2. Все права защищены."
+            },
+            az: {
+                header: "Standoff 2 Qızıl Satın Al",
+                nav: ["Ana səhifə", "Bizimlə Əlaqə"],
+                contact: {
+                    title: "Bizimlə Əlaqə",
+                    email: "Email: info@standoff2gold.com",
+                    phone: "Telefon: +123 456 7890",
+                    address: "Ünvan: Moskva, Rusiya"
+                },
+                footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelector('header h1').innerText = translations[lang].header;
+            const navItems = document.querySelectorAll('nav ul li a');
+            navItems[0].innerText = translations[lang].nav[0];
+            navItems[1].innerText = translations[lang].nav[1];
+
+            document.querySelector('#contact h2').innerText = translations[lang].contact.title;
+            const contactInfo = document.querySelectorAll('.contact-info p');
+            contactInfo[0].innerText = translations[lang].contact.email;
+            contactInfo[1].innerText = translations[lang].contact.phone;
+            contactInfo[2].innerText = translations[lang].contact.address;
+
+            document.querySelector('footer p').innerText = translations[lang].footer;
+        }
+    </script>
 </body>
 </html>
