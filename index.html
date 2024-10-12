@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,36 +97,6 @@
     </style>
     <script>
         const translations = {
-            en: {
-                header: "Buy Standoff 2 Gold",
-                nav: ["Home", "Gold Packages", "Contact Us"],
-                products: [
-                    {
-                        title: "Gold Package 1 - 1000 Gold",
-                        description: "Get 1000 Gold for your Standoff 2 account instantly after purchase.",
-                        button: "Buy Now"
-                    },
-                    {
-                        title: "Gold Package 2 - 5000 Gold",
-                        description: "Receive 5000 Gold quickly and securely, directly to your Standoff 2 account.",
-                        button: "Buy Now"
-                    },
-                    {
-                        title: "Gold Package 3 - 10000 Gold",
-                        description: "Best value! 10000 Gold delivered fast after purchase. Secure and reliable.",
-                        button: "Buy Now"
-                    }
-                ],
-                contact: {
-                    title: "Contact Us",
-                    name: "Name",
-                    email: "Email",
-                    message: "Your Inquiry",
-                    placeholder: "Questions or purchase inquiry...",
-                    submit: "Send"
-                },
-                footer: "© 2024 Standoff 2 Gold. All rights reserved."
-            },
             ru: {
                 header: "Купить золото Standoff 2",
                 nav: ["Главная", "Пакеты золота", "Связаться с нами"],
@@ -218,25 +188,61 @@
 </head>
 <body>
     <header>
-        <h1>Buy Standoff 2 Gold</h1>
+        <h1>Купить золото Standoff 2</h1>
         <div class="language-selector">
-            <label for="language">Select Language:</label>
+            <label for="language">Выберите язык:</label>
             <select id="language" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
                 <option value="ru">Русский</option>
                 <option value="az">Azərbaycanca</option>
             </select>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Gold Packages</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#products">Пакеты золота</a></li>
+                <li><a href="#contact">Связаться с нами</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="home">
         <section class="product-card" id="products">
-            <h2>Gold Package 1 - 1000 Gold</h2>
-            <p>Get 1000 Gold for your
+            <h2>Пакет золота 1 - 1000 золота</h2>
+            <p>Получите 1000 золота для вашей учетной записи Standoff 2 мгновенно после покупки.</p>
+            <a href="#contact" class="btn">Купить сейчас</a>
+        </section>
+
+        <section class="product-card">
+            <h2>Пакет золота 2 - 5000 золота</h2>
+            <p>Получите 5000 золота быстро и безопасно, прямо на ваш аккаунт Standoff 2.</p>
+            <a href="#contact" class="btn">Купить сейчас</a>
+        </section>
+        
+        <section class="product-card">
+            <h2>Пакет золота 3 - 10000 золота</h2>
+            <p>Лучшее предложение! 10000 золота доставляются быстро после покупки. Безопасно и надежно.</p>
+            <a href="#contact" class="btn">Купить сейчас</a>
+        </section>
+    </main>
+
+    <section id="contact">
+        <form>
+            <h2>Связаться с нами</h2>
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+
+            <label for="message">Ваш запрос</label>
+            <textarea id="message" name="message" rows="4" placeholder="Вопросы или запрос на покупку..." required></textarea>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Золото Standoff 2. Все права защищены.</p>
+    </footer>
+</body>
+</html>
