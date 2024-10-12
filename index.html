@@ -72,6 +72,23 @@
         footer p {
             margin: 0;
         }
+        section#prices {
+            background-color: #e2f0d9; /* Light green */
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .price-list {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 20px 0;
+        }
+        .discount-note {
+            font-weight: bold;
+            color: #ff5733; /* Red color for emphasis */
+        }
         section#discord {
             background-color: #e9ecef; /* Light gray */
             padding: 40px 20px;
@@ -93,23 +110,6 @@
         .discord-link:hover {
             border-bottom: 2px solid transparent; /* Remove underline on hover */
         }
-        section#prices {
-            background-color: #e2f0d9; /* Light green */
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .price-list {
-            font-size: 1.2rem;
-            color: #555;
-            margin: 20px 0;
-        }
-        .discount-note {
-            font-weight: bold;
-            color: #ff5733; /* Red color for emphasis */
-        }
     </style>
 </head>
 <body>
@@ -119,26 +119,17 @@
             <label for="language">Выберите язык:</label>
             <select id="language" onchange="changeLanguage(this.value)">
                 <option value="ru">Русский</option>
-                <option value="az">Azərbaycanca</option>
+                <option value="az">Azərbaycan</option>
             </select>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#discord">Discord сервер</a></li>
                 <li><a href="#prices">Цены</a></li>
+                <li><a href="#discord">Discord сервер</a></li>
             </ul>
         </nav>
     </header>
-
-    <section id="discord">
-        <h2>Присоединяйтесь к нашему Discord серверу</h2>
-        <div class="discord-info">
-            <p>Будьте в курсе всех новостей и обновлений Standoff 2!</p>
-            <p>Присоединяйтесь к нам по ссылке ниже:</p>
-            <a href="https://discord.gg/yourdiscordlink" class="discord-link" target="_blank">Наш Discord сервер</a>
-        </div>
-    </section>
 
     <section id="prices">
         <h2>Цены в Konami Shop 🇦🇿🤫</h2>
@@ -152,12 +143,21 @@
             <p>🍯700 - 11.10 Azn</p>
             <p>🍯800 - 12.40 Azn</p>
             <p>🍯900 - 13.50 Azn</p>
-            <p>🍯1000 - 14.60 Azn (Ən cox satılan🤩)</p>
+            <p>🍯1000 - 14.60 Azn (Самый продаваемый🤩)</p>
             <p>🍯1200 - 18.30 Azn</p>
-            <p>🍯1500+ - Şəxsiyə</p>
+            <p>🍯1500+ - Индивидуально</p>
         </div>
         <div class="discount-note">
-            <p>Ayın Sonuna gədər Endirimli qiymətlər 20%!</p>
+            <p>До конца месяца скидки 20%!</p>
+        </div>
+    </section>
+
+    <section id="discord">
+        <h2>Присоединяйтесь к нашему Discord серверу</h2>
+        <div class="discord-info">
+            <p>Будьте в курсе всех новостей и обновлений Standoff 2!</p>
+            <p>Присоединяйтесь к нам по ссылке ниже:</p>
+            <a href="https://discord.gg/yourdiscordlink" class="discord-link" target="_blank">Наш Discord сервер</a>
         </div>
     </section>
 
@@ -169,12 +169,7 @@
         const translations = {
             ru: {
                 header: "Купить золото Standoff 2",
-                nav: ["Главная", "Discord сервер", "Цены"],
-                discord: {
-                    title: "Присоединяйтесь к нашему Discord серверу",
-                    info: "Будьте в курсе всех новостей и обновлений Standoff 2!",
-                    linkText: "Наш Discord сервер"
-                },
+                nav: ["Главная", "Цены", "Discord сервер"],
                 prices: {
                     title: "Цены в Konami Shop 🇦🇿🤫",
                     items: [
@@ -187,22 +182,22 @@
                         "🍯700 - 11.10 Azn",
                         "🍯800 - 12.40 Azn",
                         "🍯900 - 13.50 Azn",
-                        "🍯1000 - 14.60 Azn (Ən cox satılan🤩)",
+                        "🍯1000 - 14.60 Azn (Самый продаваемый🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Şəxsiyə"
+                        "🍯1500+ - Индивидуально"
                     ],
-                    discount: "Ayın Sonuna gədər Endirimli qiymətlər 20%!"
+                    discount: "До конца месяца скидки 20%!"
+                },
+                discord: {
+                    title: "Присоединяйтесь к нашему Discord серверу",
+                    info: "Будьте в курсе всех новостей и обновлений Standoff 2!",
+                    linkText: "Наш Discord сервер"
                 },
                 footer: "© 2024 Золото Standoff 2. Все права защищены."
             },
             az: {
                 header: "Standoff 2 Qızıl Satın Al",
-                nav: ["Ana səhifə", "Discord server", "Qiymətlər"],
-                discord: {
-                    title: "Bizim Discord serverimizə qoşulun",
-                    info: "Standoff 2 ilə bağlı bütün yeniliklərdən xəbərdar olun!",
-                    linkText: "Bizim Discord serverimiz"
-                },
+                nav: ["Ana səhifə", "Qiymətlər", "Discord server"],
                 prices: {
                     title: "Konami Shop Qiymətləri 🇦🇿🤫",
                     items: [
@@ -221,6 +216,11 @@
                     ],
                     discount: "Ayın Sonuna gədər Endirimli qiymətlər 20%!"
                 },
+                discord: {
+                    title: "Bizim Discord serverimizə qoşulun",
+                    info: "Standoff 2 haqqında bütün xəbərləri və yenilikləri izləyin!",
+                    linkText: "Bizim Discord serverimiz"
+                },
                 footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
             }
         };
@@ -232,15 +232,15 @@
             navItems[1].innerText = translations[lang].nav[1];
             navItems[2].innerText = translations[lang].nav[2];
 
-            document.querySelector('#discord h2').innerText = translations[lang].discord.title;
-            const discordInfo = document.querySelectorAll('.discord-info p');
-            discordInfo[0].innerText = translations[lang].discord.info;
-            document.querySelector('.discord-link').innerText = translations[lang].discord.linkText;
-
             document.querySelector('#prices h2').innerText = translations[lang].prices.title;
             const priceList = document.querySelector('.price-list');
             priceList.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
             document.querySelector('.discount-note p').innerText = translations[lang].prices.discount;
+
+            document.querySelector('#discord h2').innerText = translations[lang].discord.title;
+            const discordInfo = document.querySelectorAll('.discord-info p');
+            discordInfo[0].innerText = translations[lang].discord.info;
+            document.querySelector('.discord-link').innerText = translations[lang].discord.linkText;
 
             document.querySelector('footer p').innerText = translations[lang].footer;
         }
