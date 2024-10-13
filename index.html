@@ -77,25 +77,25 @@
             font-weight: bold;
             color: #ff5733;
         }
-        section#discord {
+        section#contact {
             background-color: #e9ecef;
             padding: 40px 20px;
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .discord-info {
+        .contact-info {
             font-size: 1.1rem;
             color: #555;
         }
-        .discord-link {
+        .discord-link, .telegram-link {
             color: #61dafb;
             text-decoration: none;
             font-weight: bold;
             border-bottom: 2px solid #61dafb;
             transition: border-bottom 0.3s;
         }
-        .discord-link:hover {
+        .discord-link:hover, .telegram-link:hover {
             border-bottom: 2px solid transparent;
         }
         .countdown {
@@ -147,12 +147,14 @@
         <div class="countdown" id="countdown"></div>
     </section>
 
-    <!-- Discord Section -->
-    <section id="discord">
-        <h2>Присоединяйтесь к нашему Discord серверу</h2>
-        <div class="discord-info">
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Наши Контакты</h2>
+        <div class="contact-info">
             <p>Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:</p>
-            <a href="https://discord.gg/Ahttfg2fDu" class="discord-link" target="_blank">Наш Discord сервер</a>
+            <a href="https://discord.gg/Ahttfg2fDu" class="discord-link" target="_blank">Наш Discord сервер</a><br>
+            <p>Также присоединяйтесь к нашему Telegram каналу:</p>
+            <a href="https://t.me/KonamiStandoff" class="telegram-link" target="_blank">Наш Telegram</a>
         </div>
     </section>
 
@@ -183,8 +185,8 @@
                     ],
                     discount: "До конца месяца скидки 20%!"
                 },
-                discord: {
-                    title: "Присоединяйтесь к нашему Discord серверу",
+                contact: {
+                    title: "Наши Контакты",
                     info: "Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:"
                 },
                 footer: "© 2024 Золото Standoff 2. Все права защищены."
@@ -207,10 +209,10 @@
                         "🍯1200 - 18.30 Azn",
                         "🍯1500+ - Fərdi"
                     ],
-                    discount: "Ayın sonuna qədər 20% endirim!"
+                    discount: "Ayın sonuna qədər 20% endirim var!"
                 },
-                discord: {
-                    title: "Bizim Discord serverimizə qoşulun",
+                contact: {
+                    title: "Bizim Əlaqə",
                     info: "Standoff 2-nin bütün xəbərlərindən və yeniliklərindən xəbərdar olun! Aşağıdakı linklə qoşulun:"
                 },
                 footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
@@ -222,16 +224,16 @@
             const pricesTitle = document.querySelector('#prices h2');
             const priceItems = document.querySelector('.price-list');
             const discountNote = document.querySelector('.discount-note p');
-            const discordTitle = document.querySelector('#discord h2');
-            const discordInfo = document.querySelector('.discord-info p:nth-of-type(1)');
+            const contactTitle = document.querySelector('#contact h2');
+            const contactInfo = document.querySelector('.contact-info p:nth-of-type(1)');
             const footer = document.querySelector('footer p');
 
             header.textContent = translations[lang].header;
             pricesTitle.textContent = translations[lang].prices.title;
             priceItems.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
             discountNote.textContent = translations[lang].prices.discount;
-            discordTitle.textContent = translations[lang].discord.title;
-            discordInfo.textContent = translations[lang].discord.info;
+            contactTitle.textContent = translations[lang].contact.title;
+            contactInfo.textContent = translations[lang].contact.info;
             footer.textContent = translations[lang].footer;
         }
 
