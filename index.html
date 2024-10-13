@@ -35,26 +35,6 @@
             font-family: 'Raleway', sans-serif;
             font-weight: 800;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background-color 0.4s, transform 0.3s;
-            font-size: 1.1rem;
-        }
-        nav ul li a:hover {
-            background-color: #ff5733;
-            transform: scale(1.1);
-        }
         .language-selector {
             margin: 10px;
             text-align: center;
@@ -132,13 +112,6 @@
                 <option value="az">Azərbaycan</option>
             </select>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#prices">Цены</a></li>
-                <li><a href="#discord">Discord сервер</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Price Section -->
@@ -182,7 +155,6 @@
         const translations = {
             ru: {
                 header: "Купить золото Standoff 2",
-                nav: ["Главная", "Цены", "Discord сервер"],
                 prices: {
                     title: "Цены в Konami Shop 🇦🇿🤫",
                     items: [
@@ -210,7 +182,6 @@
             },
             az: {
                 header: "Standoff 2 Qızıl Satın Al",
-                nav: ["Ana səhifə", "Qiymətlər", "Discord server"],
                 prices: {
                     title: "Konami Shop Qiymətləri 🇦🇿🤫",
                     items: [
@@ -240,10 +211,6 @@
 
         function changeLanguage(lang) {
             document.querySelector('header h1').innerText = translations[lang].header;
-            const navItems = document.querySelectorAll('nav ul li a');
-            navItems[0].innerText = translations[lang].nav[0];
-            navItems[1].innerText = translations[lang].nav[1];
-            navItems[2].innerText = translations[lang].nav[2];
 
             document.querySelector('#prices h2').innerText = translations[lang].prices.title;
             const priceList = document.querySelector('.price-list');
