@@ -35,16 +35,24 @@
             font-family: 'Raleway', sans-serif;
             font-weight: 800;
         }
-        .language-selector {
+        .language-buttons {
             margin: 10px;
-            text-align: center;
         }
-        .language-selector select {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+        .language-button {
             font-size: 1rem;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #61dafb;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
+        .language-button:hover {
+            background-color: #57a7e1;
+        }
+
         main {
             padding: 60px 20px;
             text-align: center;
@@ -90,6 +98,11 @@
         .discord-link:hover {
             border-bottom: 2px solid transparent;
         }
+        .countdown {
+            font-size: 1.5rem;
+            color: #ff5733;
+            margin: 20px 0;
+        }
         footer {
             background-color: #282c34;
             color: white;
@@ -105,12 +118,9 @@
     <!-- Header -->
     <header>
         <h1>Купить золото Standoff 2</h1>
-        <div class="language-selector">
-            <label for="language">Выберите язык:</label>
-            <select id="language" onchange="changeLanguage(this.value)">
-                <option value="ru">Русский</option>
-                <option value="az">Azərbaycan</option>
-            </select>
+        <div class="language-buttons">
+            <button class="language-button" onclick="changeLanguage('ru')">Русский</button>
+            <button class="language-button" onclick="changeLanguage('az')">Azərbaycan</button>
         </div>
     </header>
 
@@ -134,14 +144,14 @@
         <div class="discount-note">
             <p>До конца месяца скидки 20%!</p>
         </div>
+        <div class="countdown" id="countdown"></div>
     </section>
 
     <!-- Discord Section -->
     <section id="discord">
         <h2>Присоединяйтесь к нашему Discord серверу</h2>
         <div class="discord-info">
-            <p>Будьте в курсе всех новостей и обновлений Standoff 2!</p>
-            <p>Присоединяйтесь к нам по ссылке ниже:</p>
+            <p>Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:</p>
             <a href="https://discord.gg/Ahttfg2fDu" class="discord-link" target="_blank">Наш Discord сервер</a>
         </div>
     </section>
@@ -175,8 +185,7 @@
                 },
                 discord: {
                     title: "Присоединяйтесь к нашему Discord серверу",
-                    info: "Будьте в курсе всех новостей и обновлений Standoff 2!",
-                    linkText: "Наш Discord сервер"
+                    info: "Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:"
                 },
                 footer: "© 2024 Золото Standoff 2. Все права защищены."
             },
@@ -194,36 +203,62 @@
                         "🍯700 - 11.10 Azn",
                         "🍯800 - 12.40 Azn",
                         "🍯900 - 13.50 Azn",
-                        "🍯1000 - 14.60 Azn (Ən cox satılan🤩)",
+                        "🍯1000 - 14.60 Azn (Ən çox satılan🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Şəxsiyə"
+                        "🍯1500+ - Fərdi"
                     ],
-                    discount: "Ayın Sonuna gədər Endirimli qiymətlər 20%!"
+                    discount: "Ayın sonuna qədər 20% endirim!"
                 },
                 discord: {
                     title: "Bizim Discord serverimizə qoşulun",
-                    info: "Standoff 2 haqqında bütün xəbərləri və yenilikləri izləyin!",
-                    linkText: "Bizim Discord serverimiz"
+                    info: "Standoff 2-nin bütün xəbərlərindən və yeniliklərindən xəbərdar olun! Aşağıdakı linklə qoşulun:"
                 },
                 footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
             }
         };
 
         function changeLanguage(lang) {
-            document.querySelector('header h1').innerText = translations[lang].header;
+            const header = document.querySelector('header h1');
+            const pricesTitle = document.querySelector('#prices h2');
+            const priceItems = document.querySelector('.price-list');
+            const discountNote = document.querySelector('.discount-note p');
+            const discordTitle = document.querySelector('#discord h2');
+            const discordInfo = document.querySelector('.discord-info p:nth-of-type(1)');
+            const footer = document.querySelector('footer p');
 
-            document.querySelector('#prices h2').innerText = translations[lang].prices.title;
-            const priceList = document.querySelector('.price-list');
-            priceList.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
-            document.querySelector('.discount-note p').innerText = translations[lang].prices.discount;
-
-            document.querySelector('#discord h2').innerText = translations[lang].discord.title;
-            const discordInfo = document.querySelectorAll('.discord-info p');
-            discordInfo[0].innerText = translations[lang].discord.info;
-            document.querySelector('.discord-link').innerText = translations[lang].discord.linkText;
-
-            document.querySelector('footer p').innerText = translations[lang].footer;
+            header.textContent = translations[lang].header;
+            pricesTitle.textContent = translations[lang].prices.title;
+            priceItems.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
+            discountNote.textContent = translations[lang].prices.discount;
+            discordTitle.textContent = translations[lang].discord.title;
+            discordInfo.textContent = translations[lang].discord.info;
+            footer.textContent = translations[lang].footer;
         }
+
+        // Countdown Functionality (Optional)
+        const endDate = new Date('2024-10-31T23:59:59');
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = endDate - now;
+
+            if (timeRemaining <= 0) {
+                countdownElement.textContent = "Скидки закончились!";
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call to display immediately
     </script>
 </body>
 </html>
