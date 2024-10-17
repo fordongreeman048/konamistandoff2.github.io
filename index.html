@@ -127,6 +127,7 @@
     <!-- Price Section -->
     <section id="prices">
         <h2>Цены в Konami Shop 🇦🇿🤫</h2>
+        <h3>Категория 1: Без ID</h3>
         <div class="price-list">
             <p>🍯100 - 2.05 Azn</p>
             <p>🍯200 - 3.95 Azn</p>
@@ -140,12 +141,15 @@
             <p>🍯1000 - 14.60 Azn (Самый продаваемый🤩)</p>
             <p>🍯1200 - 18.30 Azn</p>
             <p>🍯1500+ - Индивидуально</p>
-            <!-- New Offers -->
-            <p>🍯10.000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn</p>
-            <p>🍯5000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn</p>
-            <p>🍯1500 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn</p>
-            <p>🍯700 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn</p>
-            <p>🍯300 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn</p>
+        </div>
+
+        <h3>Категория 2: По ID</h3>
+        <div class="price-list">
+            <p>🍯10.000 золота🍯 По ID, без входа в аккаунт ✅ - 163.79 Azn</p>
+            <p>🍯5000 золота🍯 По ID, без входа в аккаунт ✅ - 94.58 Azn</p>
+            <p>🍯1500 золота🍯 По ID, без входа в аккаунт ✅ - 42.73 Azn</p>
+            <p>🍯700 золота🍯 По ID, без входа в аккаунт ✅ - 24.45 Azn</p>
+            <p>🍯300 золота🍯 По ID, без входа в аккаунт ✅ - 14.67 Azn</p>
         </div>
         <div class="discount-note">
             <p>До конца месяца скидки 20%!</p>
@@ -174,8 +178,9 @@
             ru: {
                 header: "Купить золото Standoff 2",
                 prices: {
-                    title: "Цены в Konami Shop 🇦🇿🤫",
-                    items: [
+                    category1: "Категория 1: Без ID",
+                    category2: "Категория 2: По ID",
+                    itemsNoID: [
                         "🍯100 - 2.05 Azn",
                         "🍯200 - 3.95 Azn",
                         "🍯300 - 5.50 Azn",
@@ -187,12 +192,14 @@
                         "🍯900 - 13.50 Azn",
                         "🍯1000 - 14.60 Azn (Самый продаваемый🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Индивидуально",
-                        "🍯10.000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn",
-                        "🍯5000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn",
-                        "🍯1500 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn",
-                        "🍯700 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn",
-                        "🍯300 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn"
+                        "🍯1500+ - Индивидуально"
+                    ],
+                    itemsByID: [
+                        "🍯10.000 золота🍯 По ID, без входа в аккаунт ✅ - 163.79 Azn",
+                        "🍯5000 золота🍯 По ID, без входа в аккаунт ✅ - 94.58 Azn",
+                        "🍯1500 золота🍯 По ID, без входа в аккаунт ✅ - 42.73 Azn",
+                        "🍯700 золота🍯 По ID, без входа в аккаунт ✅ - 24.45 Azn",
+                        "🍯300 золота🍯 По ID, без входа в аккаунт ✅ - 14.67 Azn"
                     ]
                 },
                 discount: "До конца месяца скидки 20%!",
@@ -204,8 +211,9 @@
             az: {
                 header: "Standoff 2 Qızılı Al",
                 prices: {
-                    title: "Qiymətlər Konami Shop-da 🇦🇿🤫",
-                    items: [
+                    category1: "Kateqoriya 1: İDsiz",
+                    category2: "Kateqoriya 2: ID ilə",
+                    itemsNoID: [
                         "🍯100 - 2.05 Azn",
                         "🍯200 - 3.95 Azn",
                         "🍯300 - 5.50 Azn",
@@ -217,7 +225,9 @@
                         "🍯900 - 13.50 Azn",
                         "🍯1000 - 14.60 Azn (Ən çox satılan🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Fərdi",
+                        "🍯1500+ - Fərdi"
+                    ],
+                    itemsByID: [
                         "🍯10.000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn",
                         "🍯5000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn",
                         "🍯1500 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn",
@@ -239,7 +249,13 @@
 
             const priceList = document.querySelector('.price-list');
             priceList.innerHTML = '';
-            translations[lang].prices.items.forEach(item => {
+            translations[lang].prices.itemsNoID.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                priceList.appendChild(p);
+            });
+
+            translations[lang].prices.itemsByID.forEach(item => {
                 const p = document.createElement('p');
                 p.textContent = item;
                 priceList.appendChild(p);
@@ -259,8 +275,7 @@
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / 1000);
 
             document.getElementById("countdown").innerHTML = `До конца скидки осталось: ${days}д ${hours}ч ${minutes}м ${seconds}с`;
 
