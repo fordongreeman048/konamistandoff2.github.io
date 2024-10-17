@@ -140,6 +140,12 @@
             <p>🍯1000 - 14.60 Azn (Самый продаваемый🤩)</p>
             <p>🍯1200 - 18.30 Azn</p>
             <p>🍯1500+ - Индивидуально</p>
+            <!-- New Offers -->
+            <p>🍯10.000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn</p>
+            <p>🍯5000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn</p>
+            <p>🍯1500 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn</p>
+            <p>🍯700 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn</p>
+            <p>🍯300 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn</p>
         </div>
         <div class="discount-note">
             <p>До конца месяца скидки 20%!</p>
@@ -181,20 +187,24 @@
                         "🍯900 - 13.50 Azn",
                         "🍯1000 - 14.60 Azn (Самый продаваемый🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Индивидуально"
-                    ],
-                    discount: "До конца месяца скидки 20%!"
+                        "🍯1500+ - Индивидуально",
+                        "🍯10.000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn",
+                        "🍯5000 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn",
+                        "🍯1500 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn",
+                        "🍯700 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn",
+                        "🍯300 qızıl🍯 Ид ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn"
+                    ]
                 },
+                discount: "До конца месяца скидки 20%!",
                 contact: {
                     title: "Наши Контакты",
-                    info: "Будьте в курсе всех новостей и обновлений Standoff 2! А ниже наши ссылки:"
-                },
-                footer: "© 2024 Золото Standoff 2. Все права защищены."
+                    info: "Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:"
+                }
             },
             az: {
-                header: "Standoff 2 Qızıl Satın Al",
+                header: "Standoff 2 Qızılı Al",
                 prices: {
-                    title: "Konami Shop Qiymətləri 🇦🇿🤫",
+                    title: "Qiymətlər Konami Shop-da 🇦🇿🤫",
                     items: [
                         "🍯100 - 2.05 Azn",
                         "🍯200 - 3.95 Azn",
@@ -207,60 +217,58 @@
                         "🍯900 - 13.50 Azn",
                         "🍯1000 - 14.60 Azn (Ən çox satılan🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Fərdi"
-                    ],
-                    discount: "Ayın sonuna qədər 20% endirim var!"
+                        "🍯1500+ - Fərdi",
+                        "🍯10.000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn",
+                        "🍯5000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn",
+                        "🍯1500 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn",
+                        "🍯700 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn",
+                        "🍯300 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn"
+                    ]
                 },
+                discount: "Ayın sonuna kimi 20% endirimlər var!",
                 contact: {
-                    title: "Bizim Əlaqə",
-                    info: "Standoff 2-nin bütün xəbərlərindən və yeniliklərindən xəbərdar olun! Aşağıdakı linklə qoşulun:"
-                },
-                footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
+                    title: "Bizimlə Əlaqə",
+                    info: "Standoff 2 xəbərləri və yenilikləri izləyin! Aşağıdakı linklərə qoşulun:"
+                }
             }
         };
 
         function changeLanguage(lang) {
-            const header = document.querySelector('header h1');
-            const pricesTitle = document.querySelector('#prices h2');
-            const priceItems = document.querySelector('.price-list');
-            const discountNote = document.querySelector('.discount-note p');
-            const contactTitle = document.querySelector('#contact h2');
-            const contactInfo = document.querySelector('.contact-info p:nth-of-type(1)');
-            const footer = document.querySelector('footer p');
+            document.querySelector('h1').textContent = translations[lang].header;
+            document.querySelector('#prices h2').textContent = translations[lang].prices.title;
 
-            header.textContent = translations[lang].header;
-            pricesTitle.textContent = translations[lang].prices.title;
-            priceItems.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
-            discountNote.textContent = translations[lang].prices.discount;
-            contactTitle.textContent = translations[lang].contact.title;
-            contactInfo.textContent = translations[lang].contact.info;
-            footer.textContent = translations[lang].footer;
+            const priceList = document.querySelector('.price-list');
+            priceList.innerHTML = '';
+            translations[lang].prices.items.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                priceList.appendChild(p);
+            });
+
+            document.querySelector('.discount-note').textContent = translations[lang].discount;
+            document.querySelector('#contact h2').textContent = translations[lang].contact.title;
+            document.querySelector('#contact .contact-info p').textContent = translations[lang].contact.info;
         }
 
-        // Countdown Functionality (Optional)
-        const endDate = new Date('2024-10-31T23:59:59');
-        const countdownElement = document.getElementById('countdown');
+        // Countdown Timer for Discount
+        const countdownDate = new Date("2024-10-31T23:59:59").getTime();
 
-        function updateCountdown() {
-            const now = new Date();
-            const timeRemaining = endDate - now;
+        const countdownFunction = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-            if (timeRemaining <= 0) {
-                countdownElement.textContent = "Скидки закончились!";
-                clearInterval(countdownInterval);
-                return;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `До конца скидки осталось: ${days}д ${hours}ч ${minutes}м ${seconds}с`;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Скидка закончилась!";
             }
-
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call to display immediately
+        }, 1000);
     </script>
 </body>
 </html>
