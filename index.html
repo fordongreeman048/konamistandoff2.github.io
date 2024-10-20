@@ -35,22 +35,48 @@
             font-family: 'Raleway', sans-serif;
             font-weight: 800;
         }
-        .language-buttons {
+        .language-switch {
             margin: 10px;
+            text-align: center;
         }
-        .language-button {
-            font-size: 1rem;
-            padding: 10px 20px;
-            margin: 0 5px;
-            background-color: #61dafb;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
             cursor: pointer;
-            transition: background-color 0.3s;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
         }
-        .language-button:hover {
-            background-color: #57a7e1;
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #61dafb;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
         }
 
         main {
@@ -77,25 +103,25 @@
             font-weight: bold;
             color: #ff5733;
         }
-        section#contact {
+        section#discord {
             background-color: #e9ecef;
             padding: 40px 20px;
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .contact-info {
+        .discord-info {
             font-size: 1.1rem;
             color: #555;
         }
-        .discord-link, .telegram-link {
+        .discord-link {
             color: #61dafb;
             text-decoration: none;
             font-weight: bold;
             border-bottom: 2px solid #61dafb;
             transition: border-bottom 0.3s;
         }
-        .discord-link:hover, .telegram-link:hover {
+        .discord-link:hover {
             border-bottom: 2px solid transparent;
         }
         .countdown {
@@ -118,16 +144,18 @@
     <!-- Header -->
     <header>
         <h1>Купить золото Standoff 2</h1>
-        <div class="language-buttons">
-            <button class="language-button" onclick="changeLanguage('ru')">Русский</button>
-            <button class="language-button" onclick="changeLanguage('az')">Azərbaycan</button>
+        <div class="language-switch">
+            <label class="switch">
+                <input type="checkbox" id="languageSwitch" onchange="toggleLanguage()">
+                <span class="slider"></span>
+            </label>
+            <p>Русский / Azərbaycan</p>
         </div>
     </header>
 
     <!-- Price Section -->
     <section id="prices">
         <h2>Цены в Konami Shop 🇦🇿🤫</h2>
-        <h3>Категория 1: Без ID</h3>
         <div class="price-list">
             <p>🍯100 - 2.05 Azn</p>
             <p>🍯200 - 3.95 Azn</p>
@@ -138,18 +166,13 @@
             <p>🍯700 - 11.10 Azn</p>
             <p>🍯800 - 12.40 Azn</p>
             <p>🍯900 - 13.50 Azn</p>
-            <p>🍯1000 - 14.60 Azn (Самый продаваемый🤩)</p>
+            <p>🍯1000 - 14.60 Azn (Ən cox satılan🤩)</p>
             <p>🍯1200 - 18.30 Azn</p>
-            <p>🍯1500+ - Индивидуально</p>
-        </div>
-
-        <h3>Категория 2: По ID</h3>
-        <div class="price-list">
-            <p>🍯10.000 золота🍯 По ID, без входа в аккаунт ✅ - 163.79 Azn</p>
-            <p>🍯5000 золота🍯 По ID, без входа в аккаунт ✅ - 94.58 Azn</p>
-            <p>🍯1500 золота🍯 По ID, без входа в аккаунт ✅ - 42.73 Azn</p>
-            <p>🍯700 золота🍯 По ID, без входа в аккаунт ✅ - 24.45 Azn</p>
-            <p>🍯300 золота🍯 По ID, без входа в аккаунт ✅ - 14.67 Azn</p>
+            <p>🍯1500 - 21.40 Azn</p>
+            <p>🍯2000 - 28.25 Azn</p>
+            <p>🍯3000 - 41.45 Azn</p>
+            <p>🍯5000 - 67.56 Azn</p>
+            <p>🍯10000 - 132.56 Azn</p>
         </div>
         <div class="discount-note">
             <p>До конца месяца скидки 20%!</p>
@@ -157,14 +180,13 @@
         <div class="countdown" id="countdown"></div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Наши Контакты</h2>
-        <div class="contact-info">
-            <p>Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:</p>
-            <a href="https://discord.gg/Ahttfg2fDu" class="discord-link" target="_blank">Наш Discord сервер</a><br>
-            <p>Также присоединяйтесь к нашему Telegram каналу:</p>
-            <a href="https://t.me/KonamiStandoff" class="telegram-link" target="_blank">Наш Telegram</a>
+    <!-- Discord Section -->
+    <section id="discord">
+        <h2>Присоединяйтесь к нашему Discord серверу</h2>
+        <div class="discord-info">
+            <p>Будьте в курсе всех новостей и обновлений Standoff 2!</p>
+            <p>Присоединяйтесь к нам по ссылке ниже:</p>
+            <a href="https://discord.gg/Ahttfg2fDu" class="discord-link" target="_blank">Наш Discord сервер</a>
         </div>
     </section>
 
@@ -178,9 +200,8 @@
             ru: {
                 header: "Купить золото Standoff 2",
                 prices: {
-                    category1: "Категория 1: Без ID",
-                    category2: "Категория 2: По ID",
-                    itemsNoID: [
+                    title: "Цены в Konami Shop 🇦🇿🤫",
+                    items: [
                         "🍯100 - 2.05 Azn",
                         "🍯200 - 3.95 Azn",
                         "🍯300 - 5.50 Azn",
@@ -192,28 +213,26 @@
                         "🍯900 - 13.50 Azn",
                         "🍯1000 - 14.60 Azn (Самый продаваемый🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Индивидуально"
+                        "🍯1500 - 21.40 Azn",
+                        "🍯2000 - 28.25 Azn",
+                        "🍯3000 - 41.45 Azn",
+                        "🍯5000 - 67.56 Azn",
+                        "🍯10000 - 132.56 Azn"
                     ],
-                    itemsByID: [
-                        "🍯10.000 золота🍯 По ID, без входа в аккаунт ✅ - 163.79 Azn",
-                        "🍯5000 золота🍯 По ID, без входа в аккаунт ✅ - 94.58 Azn",
-                        "🍯1500 золота🍯 По ID, без входа в аккаунт ✅ - 42.73 Azn",
-                        "🍯700 золота🍯 По ID, без входа в аккаунт ✅ - 24.45 Azn",
-                        "🍯300 золота🍯 По ID, без входа в аккаунт ✅ - 14.67 Azn"
-                    ]
+                    discount: "До конца месяца скидки 20%!"
                 },
-                discount: "До конца месяца скидки 20%!",
-                contact: {
-                    title: "Наши Контакты",
-                    info: "Будьте в курсе всех новостей и обновлений Standoff 2! А ниже ссылке qoşulun:"
-                }
+                discord: {
+                    title: "Присоединяйтесь к нашему Discord серверу",
+                    info: "Будьте в курсе всех новостей и обновлений Standoff 2!",
+                    linkText: "Наш Discord сервер"
+                },
+                footer: "© 2024 Золото Standoff 2. Все права защищены."
             },
             az: {
-                header: "Standoff 2 Qızılı Al",
+                header: "Standoff 2 Qızıl Al",
                 prices: {
-                    category1: "Kateqoriya 1: İDsiz",
-                    category2: "Kateqoriya 2: ID ilə",
-                    itemsNoID: [
+                    title: "Konami Shop-da Qiymətlər 🇦🇿🤫",
+                    items: [
                         "🍯100 - 2.05 Azn",
                         "🍯200 - 3.95 Azn",
                         "🍯300 - 5.50 Azn",
@@ -223,67 +242,60 @@
                         "🍯700 - 11.10 Azn",
                         "🍯800 - 12.40 Azn",
                         "🍯900 - 13.50 Azn",
-                        "🍯1000 - 14.60 Azn (Ən çox satılan🤩)",
+                        "🍯1000 - 14.60 Azn (Ən cox satılan🤩)",
                         "🍯1200 - 18.30 Azn",
-                        "🍯1500+ - Fərdi"
+                        "🍯1500 - 21.40 Azn",
+                        "🍯2000 - 28.25 Azn",
+                        "🍯3000 - 41.45 Azn",
+                        "🍯5000 - 67.56 Azn",
+                        "🍯10000 - 132.56 Azn"
                     ],
-                    itemsByID: [
-                        "🍯10.000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 163.79 Azn",
-                        "🍯5000 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 94.58 Azn",
-                        "🍯1500 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 42.73 Azn",
-                        "🍯700 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 24.45 Azn",
-                        "🍯300 qızıl🍯 İD ilə / Hesabınıza daxil olmadan ✅ - 14.67 Azn"
-                    ]
+                    discount: "Ayın sonuna qədər 20% endirim!"
                 },
-                discount: "Ayın sonuna kimi 20% endirimlər var!",
-                contact: {
-                    title: "Bizimlə Əlaqə",
-                    info: "Standoff 2 xəbərləri və yenilikləri izləyin! Aşağıdakı linklərə qoşulun:"
-                }
+                discord: {
+                    title: "Bizim Discord serverimizə qoşulun",
+                    info: "Standoff 2 ilə bağlı bütün yeniliklərdən xəbərdar olun!",
+                    linkText: "Bizim Discord server"
+                },
+                footer: "© 2024 Standoff 2 Qızıl. Bütün hüquqlar qorunur."
             }
         };
 
-        function changeLanguage(lang) {
-            document.querySelector('h1').textContent = translations[lang].header;
-            document.querySelector('#prices h2').textContent = translations[lang].prices.title;
-
+        function toggleLanguage() {
+            const lang = document.getElementById('languageSwitch').checked ? 'az' : 'ru';
+            document.querySelector('header h1').innerText = translations[lang].header;
+            document.querySelector('#prices h2').innerText = translations[lang].prices.title;
             const priceList = document.querySelector('.price-list');
-            priceList.innerHTML = '';
-            translations[lang].prices.itemsNoID.forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
-                priceList.appendChild(p);
-            });
-
-            translations[lang].prices.itemsByID.forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
-                priceList.appendChild(p);
-            });
-
-            document.querySelector('.discount-note').textContent = translations[lang].discount;
-            document.querySelector('#contact h2').textContent = translations[lang].contact.title;
-            document.querySelector('#contact .contact-info p').textContent = translations[lang].contact.info;
+            priceList.innerHTML = translations[lang].prices.items.map(item => `<p>${item}</p>`).join('');
+            document.querySelector('.discount-note p').innerText = translations[lang].prices.discount;
+            document.querySelector('#discord h2').innerText = translations[lang].discord.title;
+            const discordInfo = document.querySelectorAll('.discord-info p');
+            discordInfo[0].innerText = translations[lang].discord.info;
+            document.querySelector('.discord-link').innerText = translations[lang].discord.linkText;
+            document.querySelector('footer p').innerText = translations[lang].footer;
         }
 
-        // Countdown Timer for Discount
-        const countdownDate = new Date("2024-10-31T23:59:59").getTime();
+        // Countdown Timer Logic
+        const countdownElement = document.getElementById('countdown');
 
-        const countdownFunction = setInterval(function () {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+        function updateCountdown() {
+            const now = new Date();
+            const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+            const difference = endOfMonth - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / 1000);
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = `До конца скидки осталось: ${days}д ${hours}ч ${minutes}м ${seconds}с`;
+            countdownElement.innerHTML = `До конца месяца осталось: ${days} дн. ${hours} ч. ${minutes} мин. ${seconds} сек.`;
 
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "Скидка закончилась!";
+            if (difference < 0) {
+                countdownElement.innerHTML = "Акция закончилась!";
             }
-        }, 1000);
+        }
+
+        setInterval(updateCountdown, 1000); // Update countdown every second
     </script>
 </body>
 </html>
